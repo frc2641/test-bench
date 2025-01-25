@@ -5,17 +5,9 @@
 package frc.team2641.robotTestBench;
 
 import edu.wpi.first.net.PortForwarder;
-import edu.wpi.first.wpilibj.Filesystem;
-import edu.wpi.first.wpilibj.PneumaticHub;
-import edu.wpi.first.wpilibj.PowerDistribution;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-
-import java.io.File;
-import java.io.IOException;
-import swervelib.parser.SwerveParser;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,41 +16,30 @@ import swervelib.parser.SwerveParser;
  * class or the package after creating this
  * project, you must also update the build.gradle file in the project.
  */
-public class Robot extends TimedRobot
-{
-  private PowerDistribution pdh;
-  private RobotContainer roboContainer;
-  private PneumaticHub ph;
+public class Robot extends TimedRobot {
   private Timer disabledTimer;
 
   private static Robot instance;
-  public static Robot getInstance(){
+  public static Robot getInstance() {
     if (instance == null) instance = new Robot();
     return instance;
-
   }
   
   @Override
-  public void robotInit(){
-    pdh = new PowerDistribution(Constants.CAN.pdh, PowerDistribution.ModuleType.kRev);
-    ph = new PneumaticHub(Constants.CAN.ph);
+  public void robotInit() {
     disabledTimer = new Timer();
-    roboContainer = new RobotContainer();
 
-    for(int port = 5800; port <=5807; port++)
-    PortForwarder.add(port,"10.26.41.25",port);    
+    for (int port = 5800; port <= 5807; port++) PortForwarder.add(port, "10.26.41.25", port);    
   }
 
   @Override
-  public void robotPeriodic(){
+  public void robotPeriodic() {
     CommandScheduler.getInstance().run();
   }
 
   @Override
-  public void disabledInit(){
-  
+  public void disabledInit() {
     disabledTimer.reset();
     disabledTimer.start();   
   }
-
 }

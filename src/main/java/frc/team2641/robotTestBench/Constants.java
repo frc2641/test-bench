@@ -17,9 +17,7 @@ package frc.team2641.robotTestBench;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-
-  public static final class CAN 
-  {
+  public static final class CAN {
     public static final int motor1 = 1;
     public static final int motor2 = 3;
     public static final int pdh = 20;
