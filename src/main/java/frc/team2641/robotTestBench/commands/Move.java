@@ -28,4 +28,3 @@ public class Move extends Command {
     public void execute() {
     }
 }
-
