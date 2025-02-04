@@ -1,14 +1,13 @@
 package frc.team2641.robotTestBench.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
-
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.team2641.robotTestBench.Constants;
 
 public class Climber extends SubsystemBase {
   private static Climber instance;
 
-    private TalonFX climber;
+  private TalonFX climber;
 
   public static Climber getInstance() {
     if (instance == null)
@@ -17,7 +16,6 @@ public class Climber extends SubsystemBase {
   }
 
   private Climber() {
-    // Needs ID set
     climber = new TalonFX(Constants.CAN.climb);
   }
 

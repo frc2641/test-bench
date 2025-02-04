@@ -16,8 +16,6 @@ import frc.team2641.robotTestBench.commands.*;
  * trigger mappings) should be declared here.
  */
 public class RobotContainer {
-  Move m1 = new Move();
-  
   private CommandXboxController gamepad = new CommandXboxController(0);
 
   public RobotContainer() {
@@ -25,8 +23,8 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-    gamepad.a().whileTrue(m1);
-    gamepad.b().onTrue(m1);
+    gamepad.a().whileTrue(new Move());
+    gamepad.b().onTrue(new Move());
     gamepad.povUp().whileTrue(new Climb(true));
     gamepad.povDown().whileTrue(new Climb(false));
   } 

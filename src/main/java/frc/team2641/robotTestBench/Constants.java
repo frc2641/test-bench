@@ -19,13 +19,12 @@ package frc.team2641.robotTestBench;
 public final class Constants {
   public static final class CAN {
     public static final int motor1 = 1;
-    public static final int motor2 = 3;
-    public static final int climb = -1;
+    public static final int motor2 = 2;
+    public static final int climb = 3;
     public static final int pdh = 20;
-    public static final int ph = 21;
   }
 
   public static final class MotorSpeeds {
-    public static final double climbSpeed = 0;
+    public static final double climbSpeed = 0.5;
   }
 }
