@@ -1,7 +1,7 @@
-package frc.team2641.robotTestBench.commands;
+package frc.team2641.testBench.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.team2641.robotTestBench.subsystems.Climber;
+import frc.team2641.testBench.subsystems.Climber;
 
 public class Climb extends Command {
   private Climber climber;

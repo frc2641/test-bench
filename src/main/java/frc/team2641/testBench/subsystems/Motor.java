@@ -1,7 +1,7 @@
-package frc.team2641.robotTestBench.subsystems;
+package frc.team2641.testBench.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.team2641.robotTestBench.Constants;
+import frc.team2641.testBench.Constants;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class Motor extends SubsystemBase {

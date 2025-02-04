@@ -1,8 +1,8 @@
-package frc.team2641.robotTestBench.subsystems;
+package frc.team2641.testBench.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.team2641.robotTestBench.Constants;
+import frc.team2641.testBench.Constants;
 
 public class Climber extends SubsystemBase {
   private static Climber instance;

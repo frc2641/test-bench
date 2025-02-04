@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.team2641.robotTestBench;
+package frc.team2641.testBench;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
@@ -25,6 +25,6 @@ public final class Constants {
   }
 
   public static final class MotorSpeeds {
-    public static final double climbSpeed = 0.5;
+    public static final double climbSpeed = 1;
   }
 }
