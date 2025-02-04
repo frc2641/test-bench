@@ -8,7 +8,8 @@ public class Motor extends SubsystemBase {
     private static Motor instance;
 
     public static Motor getInstance() {
-        if (instance == null) instance = new Motor();
+        if (instance == null)
+            instance = new Motor();
         return instance;
     }
 
