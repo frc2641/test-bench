@@ -25,6 +25,6 @@ public final class Constants {
   }
 
   public static final class MotorSpeeds {
-    public static final double climbSpeed = 1;
+    public static final double climbSpeed = 0.5;
   }
 }

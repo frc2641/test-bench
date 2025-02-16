@@ -1,6 +1,8 @@
 package frc.team2641.testBench.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.NeutralModeValue;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.team2641.testBench.Constants;
 
@@ -17,6 +19,7 @@ public class Climber extends SubsystemBase {
 
   private Climber() {
     climber = new TalonFX(Constants.CAN.climb);
+    climber.setNeutralMode(NeutralModeValue.Brake);
   }
 
   public void extend() {
