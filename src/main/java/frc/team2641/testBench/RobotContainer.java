@@ -25,7 +25,6 @@ public class RobotContainer {
 
   private void configureBindings() {
     gamepad.a().whileTrue(new Move());
-    gamepad.b().onTrue(new Move());
     gamepad.povUp().whileTrue(new Climb(true));
     gamepad.povDown().whileTrue(new Climb(false));
   }

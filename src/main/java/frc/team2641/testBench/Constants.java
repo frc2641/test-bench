@@ -18,8 +18,7 @@ package frc.team2641.testBench;
  */
 public final class Constants {
   public static final class CAN {
-    public static final int motor1 = 1;
-    public static final int motor2 = 2;
+    public static final int motor = 0;
     public static final int climb = 3;
     public static final int pdh = 20;
   }

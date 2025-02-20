@@ -4,19 +4,19 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.team2641.testBench.Constants;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-public class Motor extends SubsystemBase {
-    private static Motor instance;
+public class SubTalonSRX extends SubsystemBase {
+    private static SubTalonSRX instance;
 
-    public static Motor getInstance() {
+    public static SubTalonSRX getInstance() {
         if (instance == null)
-            instance = new Motor();
+            instance = new SubTalonSRX();
         return instance;
     }
 
     public WPI_TalonSRX motor;
 
-    public Motor() {
-        motor = new WPI_TalonSRX(Constants.CAN.motor1);
+    public SubTalonSRX() {
+        motor = new WPI_TalonSRX(Constants.CAN.motor);
 
         motor.clearStickyFaults();
         motor.configFactoryDefault();
