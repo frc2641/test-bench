@@ -4,11 +4,13 @@
 
 package frc.team2641.testBench;
 
+import edu.wpi.first.math.MathUtil;
 // import edu.wpi.first.wpilibj.PneumaticHub;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 // import frc.team2641.testBench.subsystems.Pneumatics;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
@@ -21,6 +23,8 @@ public class Robot extends TimedRobot {
   // private final PneumaticHub ph = new PneumaticHub(Constants.CAN.ph);
   private RobotContainer robotContainer;
   // private Pneumatics pneumatics;
+  // private CommandXboxController gamepad;
+  
 
   private static Robot instance;
   public static Robot getInstance() {
@@ -42,6 +46,7 @@ public class Robot extends TimedRobot {
     // pneumatics = Pneumatics.getInstance();
     // pneumatics.initialize();
     robotContainer = new RobotContainer();
+    // gamepad = robotContainer.getGamepad();
   }
   
   /**
@@ -128,4 +133,29 @@ public class Robot extends TimedRobot {
   public RobotContainer getRobotContainer(){
     return robotContainer;
   }
+
+  // public double getLeftJoystick(){
+  //   try {
+  //     return MathUtil.applyDeadband(robotContainer.getGamepad().getLeftY(), 0.05)/2;
+  //   } 
+  //   catch (NullPointerException e) {
+  //     System.out.println("Null Pointer Exception ):");
+  //     e.printStackTrace();
+  //     return -1;
+  //   }
+  // }
+  // public double getLeftJoystick(){
+  //   if(gamepad == null && robotContainer != null)
+  //     gamepad = robotContainer.getGamepad();
+  //     if (robotContainer == null)
+  //     {
+  //       System.out.println("HOW !!?!?!?");
+  //     }
+  //   if(gamepad == null)
+  //   {
+  //     System.out.println("WHY !?!!?!?");
+  //     return -1;
+  //   }
+  //   return MathUtil.applyDeadband(gamepad.getLeftY(), 0.05)/2;
+  // }
 }

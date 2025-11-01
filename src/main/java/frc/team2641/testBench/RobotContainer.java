@@ -4,10 +4,9 @@
 
 package frc.team2641.testBench;
 
-import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.team2641.testBench.commands.RunShooter;
+import frc.team2641.testBench.commands.*;
 import frc.team2641.testBench.subsystems.Motor;
 
 /**
@@ -20,12 +19,12 @@ import frc.team2641.testBench.subsystems.Motor;
  */
 public class RobotContainer {
   private CommandXboxController gamepad = new CommandXboxController(0);
-  // private Motor motor;
+  private Motor motor;
 
   public RobotContainer() {
 
     // motor = Motor.getInstance();
-    // motor.setDefaultCommand(new RunShooter());
+    // motor.setDefaultCommand(new RunMotorJoystick());
 
     configureBindings();
   }
@@ -34,15 +33,16 @@ public class RobotContainer {
     // gamepad.a().onTrue(new ExtendIntake());
     // gamepad.b().whileTrue(new RunIntakeMotor());
     // gamepad.x().whileTrue(new RunIndexer());
-    gamepad.y().whileTrue(new RunShooter());
+    gamepad.pov(0).whileTrue(new RunShooter());
+    gamepad.pov(180).whileTrue(new RunShooterBackwards());
   }
 
   public Command getAutonomousCommand() {
     return null;
   }
 
-  // public double getLeftJoystick(){
-  // return MathUtil.applyDeadband(gamepad.getLeftY(), 0.05)/2;
-  // }
+  public CommandXboxController getGamepad(){
+    return gamepad; 
+  }
 
 }

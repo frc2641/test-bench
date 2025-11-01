@@ -36,7 +36,7 @@ public class Motor extends SubsystemBase {
   TalonFXConfigurator configer = motor.getConfigurator();
 
   TalonFXConfiguration config = new TalonFXConfiguration();
-    config.MotorOutput.withNeutralMode(NeutralModeValue.Coast);
+    config.MotorOutput.withNeutralMode(NeutralModeValue.Brake);
     config.MotorOutput.withInverted(InvertedValue.Clockwise_Positive);
 
   configer.apply(config);
@@ -48,6 +48,9 @@ public void run(double speed) {
 
 public void run(){
   motor.set(Constants.MotorSpeeds.shooterSpeed);
+}
+public void runBack(){
+  motor.set(-Constants.MotorSpeeds.shooterSpeed);
 }
 
 public void stop() {
