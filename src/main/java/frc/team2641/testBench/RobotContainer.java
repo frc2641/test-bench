@@ -4,9 +4,11 @@
 
 package frc.team2641.testBench;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.team2641.testBench.commands.*;
+import frc.team2641.testBench.commands.RunShooter;
+import frc.team2641.testBench.subsystems.Motor;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -18,18 +20,29 @@ import frc.team2641.testBench.commands.*;
  */
 public class RobotContainer {
   private CommandXboxController gamepad = new CommandXboxController(0);
+  // private Motor motor;
 
   public RobotContainer() {
+
+    // motor = Motor.getInstance();
+    // motor.setDefaultCommand(new RunShooter());
+
     configureBindings();
   }
 
   private void configureBindings() {
-    gamepad.a().whileTrue(new Move());
-    gamepad.povUp().whileTrue(new Climb(true));
-    gamepad.povDown().whileTrue(new Climb(false));
+    // gamepad.a().onTrue(new ExtendIntake());
+    // gamepad.b().whileTrue(new RunIntakeMotor());
+    // gamepad.x().whileTrue(new RunIndexer());
+    gamepad.y().whileTrue(new RunShooter());
   }
 
   public Command getAutonomousCommand() {
     return null;
   }
+
+  // public double getLeftJoystick(){
+  // return MathUtil.applyDeadband(gamepad.getLeftY(), 0.05)/2;
+  // }
+
 }

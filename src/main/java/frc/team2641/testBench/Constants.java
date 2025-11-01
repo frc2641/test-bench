@@ -18,13 +18,16 @@ package frc.team2641.testBench;
  */
 public final class Constants {
   public static final class CAN {
-    public static final int motor = 0;
-    public static final int climb1 = 3;
-    public static final int climb2 = 4;
+    public static final int intakeMotor = 1;
+    public static final int indexMotor = 2;
+    public static final int shooterMotor = 1;
     public static final int pdh = 20;
+    public static final int ph = 21;
   }
 
   public static final class MotorSpeeds {
-    public static final double climbSpeed = 0.25;
+    public static final double indexerSpeed = 0.25;
+    public static final double intakeSpeed = 0.75;
+    public static final double shooterSpeed = 0.1;
   }
 }
