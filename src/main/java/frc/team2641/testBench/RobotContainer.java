@@ -33,8 +33,10 @@ public class RobotContainer {
     // gamepad.a().onTrue(new ExtendIntake());
     // gamepad.b().whileTrue(new RunIntakeMotor());
     // gamepad.x().whileTrue(new RunIndexer());
-    gamepad.pov(0).whileTrue(new RunShooter());
-    gamepad.pov(180).whileTrue(new RunShooterBackwards());
+    // gamepad.pov(0).whileTrue(new RunShooter());
+    // gamepad.pov(180).whileTrue(new RunShooterBackwards());
+    gamepad.x().onTrue(new FlipFirstSolenoid());
+    gamepad.y().onTrue(new FlipSecondSolenoid());
   }
 
   public Command getAutonomousCommand() {

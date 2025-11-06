@@ -5,11 +5,11 @@
 package frc.team2641.testBench;
 
 import edu.wpi.first.math.MathUtil;
-// import edu.wpi.first.wpilibj.PneumaticHub;
+import edu.wpi.first.wpilibj.PneumaticHub;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-// import frc.team2641.testBench.subsystems.Pneumatics;
+import frc.team2641.testBench.subsystems.Pneumatics;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 /**
@@ -20,9 +20,9 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 public class Robot extends TimedRobot {
   private Command autonomousCommand;
 
-  // private final PneumaticHub ph = new PneumaticHub(Constants.CAN.ph);
+  private final PneumaticHub ph = new PneumaticHub(Constants.CAN.ph);
   private RobotContainer robotContainer;
-  // private Pneumatics pneumatics;
+  private Pneumatics pneumatics;
   // private CommandXboxController gamepad;
   
 
@@ -43,8 +43,8 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotInit() {
-    // pneumatics = Pneumatics.getInstance();
-    // pneumatics.initialize();
+    pneumatics = Pneumatics.getInstance();
+    pneumatics.initialize();
     robotContainer = new RobotContainer();
     // gamepad = robotContainer.getGamepad();
   }
@@ -68,7 +68,7 @@ public class Robot extends TimedRobot {
   /** This function is called once each time the robot enters Disabled mode. */
   @Override
   public void disabledInit() {
-    // pneumatics.disable();
+    pneumatics.disable();
   }
 
   @Override
@@ -83,7 +83,7 @@ public class Robot extends TimedRobot {
     if (autonomousCommand != null) {
       autonomousCommand.schedule();
     }
-    // pneumatics.enable();
+    pneumatics.enable();
   }
 
   /** This function is called periodically during autonomous. */
@@ -99,7 +99,7 @@ public class Robot extends TimedRobot {
     if (autonomousCommand != null) {
       autonomousCommand.cancel();
     }
-    // pneumatics.enable();
+    pneumatics.enable();
   }
 
   /** This function is called periodically during operator control. */
@@ -110,7 +110,7 @@ public class Robot extends TimedRobot {
   public void testInit() {
     // Cancels all running commands at the start of test mode.
     CommandScheduler.getInstance().cancelAll();
-    // pneumatics.enable();
+    pneumatics.enable();
   }
 
   /** This function is called periodically during test mode. */
@@ -120,16 +120,16 @@ public class Robot extends TimedRobot {
   /** This function is called once when the robot is first started up. */
   @Override
   public void simulationInit() {
-    // pneumatics.enable();
+    pneumatics.enable();
   }
 
   /** This function is called periodically whilst in simulation. */
   @Override
   public void simulationPeriodic() {}
 
-  // public PneumaticHub getPh(){
-  //   return ph;
-  // }
+  public PneumaticHub getPh(){
+    return ph;
+  }
   public RobotContainer getRobotContainer(){
     return robotContainer;
   }
